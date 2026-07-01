@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carlos A. Lugo Hing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:      #0d1117;
+      --surface: #161b22;
+      --border:  #21262d;
+      --text:    #e6edf3;
+      --muted:   #7d8590;
+      --accent:  #4493f8;
+      --sans:    'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --mono:    'JetBrains Mono', 'Courier New', monospace;
+      --serif:   Georgia, 'Times New Roman', serif;
+    }
+
+    body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 16px; line-height: 1.6; min-height: 100vh; }
+
+    .wrap { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+    /* ── Nav ── */
+    nav { padding: 20px 0; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--border); }
+    .nav-logo { font-family: var(--mono); font-size: 13px; color: var(--accent); text-decoration: none; }
+    .nav-links { display: flex; gap: 20px; list-style: none; }
+    .nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color .15s; }
+    .nav-links a:hover { color: var(--text); }
+
+    /* ── Hero ── */
+    .hero { padding: 72px 0 56px; border-bottom: 1px solid var(--border); }
+    .eyebrow { font-family: var(--mono); font-size: 12px; color: var(--accent); letter-spacing: .08em; margin-bottom: 16px; }
+    h1 { font-size: 48px; font-weight: 600; line-height: 1.1; letter-spacing: -.02em; margin-bottom: 16px; }
+    .tagline { font-family: var(--mono); font-size: 14px; color: var(--muted); }
+    .tagline span { color: var(--accent); }
+
+    /* ── Sections ── */
+    section { padding: 44px 0; border-bottom: 1px solid var(--border); }
+    .label { font-family: var(--mono); font-size: 11px; color: var(--muted); letter-spacing: .1em; text-transform: uppercase; margin-bottom: 22px; }
+
+    /* ── About ── */
+    .about-body { font-family: var(--serif); font-size: 17px; color: #adbac7; line-height: 1.85; max-width: 580px; }
+    .about-body p + p { margin-top: 16px; }
+
+    /* ── Currently ── */
+    .current-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .current-list li { display: flex; align-items: baseline; gap: 12px; font-size: 15px; color: #adbac7; }
+    .current-list li::before { content: "→"; font-family: var(--mono); font-size: 13px; color: var(--accent); flex-shrink: 0; }
+
+    /* ── Certifications ── */
+    .cert-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .cert-card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+    .cert-card.in-progress { border-style: dashed; }
+    .cert-org { font-family: var(--mono); font-size: 10px; font-weight: 500; letter-spacing: .07em; text-transform: uppercase; margin-bottom: 5px; }
+    .cert-name { font-size: 14px; font-weight: 500; color: var(--text); line-height: 1.3; }
+    .progress-badge { display: inline-block; background: #2d2a1e; color: #e3b341; font-family: var(--mono); font-size: 10px; padding: 2px 8px; border-radius: 4px; margin-top: 7px; }
+
+    /* ── Links ── */
+    .links-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .link-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; text-decoration: none; display: flex; align-items: flex-start; gap: 14px; transition: border-color .15s; }
+    .link-card:hover { border-color: var(--accent); }
+    .link-icon { font-size: 20px; line-height: 1; margin-top: 2px; flex-shrink: 0; }
+    .link-name { font-size: 14px; font-weight: 500; color: var(--text); margin-bottom: 3px; }
+    .link-desc { font-size: 12px; color: var(--muted); }
+
+    /* ── Footer ── */
+    footer { padding: 32px 0; font-family: var(--mono); font-size: 12px; color: var(--muted); }
+
+    /* ── Mobile ── */
+    @media (max-width: 520px) {
+      h1 { font-size: 32px; }
+      .cert-grid, .links-grid { grid-template-columns: 1fr; }
+      .hero { padding: 48px 0 36px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#certs">Certs</a></li>
+        <li><a href="#connect">Connect</a></li>
+      </ul>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero">
+      <div class="eyebrow">// calhit</div>
+      
+      <h1>Carlos A.<br>Lugo Hing</h1>
+      <p class="tagline">Current help desk nerd <span>|</span> Aspiring cybersecurity nerd</p>
+    </div>
+
+    <!-- About -->
+    <section id="about">
+      <div class="label">About</div>
+      <div class="about-body">
+           
+
+<p>I've been working in IT for 3 years now, 2 of those at a local MSP, where I've gotten hands-on experience accross dozens of different environments, tools, and network setups. Through that exposure I've built a solid understanding of how systems, networks, and infrastructure function together in the real world.</p>
+ <p>Over time, I've gravitated towards every cyber security ticket and problem I could get my hands on. I've led projects that measurably improved the security posture for dozens of clients, and that work turned into a genuine passion. I'm now working on transitioning into cyber security full-time, and this page is where I document that process. By sharing my projects, learning, and growth, I hope to find like-minded people to solve real cyber security problems and share our passion for this field.</p>
+      </div>
+    </section>
+
+    <!-- Currently -->
+    <section>
+      <div class="label">Currently</div>
+      <ul class="current-list">
+        <li>Working in IT support, actively transitioning into security</li>
+        <li>Building and documenting a home security lab</li>
+        <li>B.S. Information Technology at WGU — in progress</li>
+      </ul>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certs">
+      <div class="label">Credentials</div>
+      <div class="cert-grid">
+        <div class="cert-card">
+          <div class="cert-org" style="color:#c8202f">CompTIA</div>
+          <div class="cert-name">Security+</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-org" style="color:#c8202f">CompTIA</div>
+          <div class="cert-name">Network+</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-org" style="color:#c8202f">CompTIA</div>
+          <div class="cert-name">A+</div>
+        </div>
+        <div class="cert-card">
+          <div class="cert-org" style="color:#049fd9">Cisco</div>
+          <div class="cert-name">CCNA</div>
+        </div>
+        <div class="cert-card in-progress" style="grid-column:1/-1">
+          <div class="cert-org" style="color:#7d8590">WGU</div>
+          <div class="cert-name">B.S. Information Technology</div>
+          <div class="progress-badge">In progress</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Connect -->
+    <section id="connect">
+      <div class="label">Connect</div>
+      <div class="links-grid">
+        <a class="link-card" href="https://github.com/calhit/homelab-network-security">
+          <div class="link-icon">📁</div>
+          <div>
+            <div class="link-name">Lab documentation</div>
+            <div class="link-desc">GitHub — architecture and configs</div>
+          </div>
+        </a>
+        <a class="link-card" href="https://blog.hlcalh.org">
+          <div class="link-icon">✍️</div>
+          <div>
+            <div class="link-name">Blog</div>
+            <div class="link-desc">What I'm building and learning</div>
+          </div>
+        </a>
+        <a class="link-card" href="https://linkedin.com/in/calhit">
+          <div class="link-icon">🔗</div>
+          <div>
+            <div class="link-name">LinkedIn</div>
+            <div class="link-desc">Professional profile</div>
+          </div>
+        </a>
+        <a class="link-card" id="email-link" href="#">
+          <div class="link-icon">✉️</div>
+          <div>
+            <div class="link-name">Email</div>
+            <div class="link-desc" id="email-display">contact&#64;hlcalh&#46;org</div>
+          </div>
+        </a>
+      </div>
+    </section>
+
+    <footer>~/ Carlos A. Lugo Hing</footer>
+
+  </div>
+
+  <script>
+    (function() {
+      var u = ['c','o','n','t','a','c','t'].join('');
+      var d = ['h','l','c','a','l','h','.','o','r','g'].join('');
+      var e = u + '\u0040' + d;
+      var link = document.getElementById('email-link');
+      if (link) link.href = 'mailto:' + e;
+    })();
+  </script>
+
+</body>
+</html>
